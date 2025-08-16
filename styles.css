@@ -1,0 +1,37 @@
+/* Fill screen. Mobile first. */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+#view {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  touch-action: none;
+  background: #000;
+}
+
+/* tiny unobtrusive helper text */
+#hint {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 8px;
+  font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: rgba(255,255,255,0.75);
+  background: rgba(0,0,0,0.35);
+  border-radius: 6px;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 2s ease;
+}
+#hint.fade { opacity: 0; }
+
+/* cut motion if requested by the system */
+@media (prefers-reduced-motion: reduce) {
+  #hint { transition: none; }
+}
